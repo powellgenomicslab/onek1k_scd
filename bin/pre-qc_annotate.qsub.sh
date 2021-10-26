@@ -28,6 +28,7 @@ files=($(ls ${input}))
 i="$(($SGE_TASK_ID-1))"
 
 filename=${files[$i]}
+filename=$(echo $filename | sed 's/.RDS//')
 
 echo "Running for: $filename"
 
