@@ -37,6 +37,15 @@ mats <- lapply(pools_filenames, function(pool){
   Read10X(file.path(path, pool, "outs", "filtered_feature_bc_matrix"))
 })
 
+pool_number <- str_remove(pools_filenames, "OneK1K_scRNA_Sample")
+
+mats <- mapply(function(x, pool){
+  barcodes <- colnames(x)
+  barcodes <- str_remove(barcodes, "-1$")
+  colnames(x) <- paste0(barcodes, "-", pool)
+  x
+}, mats, pool_number)
+
 #   ____________________________________________________________________________
 #   Create Seurat object for each pool                                      ####
 
@@ -52,7 +61,6 @@ objs <- mapply(function(m, pool){
   x[["percent.mt"]] <- PercentageFeatureSet(x, pattern = "^MT-")
   x
 }, mats, names(mats))
-
 
 #   ____________________________________________________________________________
 #   Export data                                                             ####
