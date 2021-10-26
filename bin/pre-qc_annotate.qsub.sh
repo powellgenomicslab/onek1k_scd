@@ -9,7 +9,7 @@
 #$ -o results/2021-10-26_pre-qc_annotation
 #$ -e results/2021-10-26_pre-qc_annotation
 
-# qsub -t 1-2 bin/pre-qc_annotate.qsub.sh
+# qsub -t 1-77 bin/pre-qc_annotate.qsub.sh
 
 cd $SGE_O_WORKDIR
 
@@ -24,7 +24,7 @@ output=results/2021-10-26_pre-qc_annotation
 echo "JOB: $JOB_ID TASK: $SGE_TASK_ID HOSTNAME: $HOSTNAME"
 
 # Get basefile name
-files=($(ls ${input}))
+files=($(ls ${input} | grep ".RDS"))
 i="$(($SGE_TASK_ID-1))"
 
 filename=${files[$i]}
