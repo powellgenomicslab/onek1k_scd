@@ -1,8 +1,6 @@
-#$ -N  integrate_pools
+#$ -N annotate_pools
 #$ -q short.q
 #$ -l mem_requested=16G
-#$ -o results/2021-10-26_pre-qc_annotation
-#$ -e results/2021-10-26_pre-qc_annotation
 #$ -cwd
 #$ -S /bin/bash
 #$ -r yes
@@ -31,4 +29,4 @@ filename=${files[$i]}
 echo "Running for: $filename"
 
 # Run main command
-singularity run -B $PWD bin/azimuth.sif --file ${input}/${filename}.RDS --out ${filename}_out
+singularity run -B $PWD ../../bin/azimuth.sif --file ${input}/${filename}.RDS --out ${filename}_out
