@@ -1,6 +1,6 @@
 #$ -N annotate_pools
 #$ -q short.q
-#$ -l mem_requested=16G
+#$ -l mem_requested=50G
 #$ -S /bin/bash
 #$ -r yes
 #$ -M j.alquicira@garvan.org.au
