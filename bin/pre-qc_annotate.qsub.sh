@@ -27,11 +27,9 @@ echo "JOB: $JOB_ID TASK: $SGE_TASK_ID HOSTNAME: $HOSTNAME"
 files=($(ls ${input}))
 i="$(($SGE_TASK_ID-1))"
 
-echo "i = $i"
-
 filename=${files[$i]}
 
 echo "Running for: $filename"
 
 # Run main command
-#singularity run -B $SGE_O_WORKDIR bin/azimuth.sif --file ${input}/${filename}.RDS --out ${output}/${filename}_out
+singularity run -B $SGE_O_WORKDIR bin/azimuth.sif --file ${input}/${filename}.RDS --out ${output}/${filename}_out
