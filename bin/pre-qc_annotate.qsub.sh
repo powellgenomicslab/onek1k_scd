@@ -3,8 +3,6 @@
 #$ -l mem_requested=50G
 #$ -S /bin/bash
 #$ -r yes
-#$ -M j.alquicira@garvan.org.au
-#$ -m ae
 #$ -cwd 
 #$ -o results/2021-10-26_pre-qc_annotation
 #$ -e results/2021-10-26_pre-qc_annotation
