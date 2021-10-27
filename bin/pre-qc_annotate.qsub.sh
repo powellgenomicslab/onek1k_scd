@@ -6,8 +6,8 @@
 #$ -M j.alquicira@garvan.org.au
 #$ -m ae
 #$ -cwd 
-#$ -o results/2021-10-26_pre-qc_annotation
-#$ -e results/2021-10-26_pre-qc_annotation
+#$ -o results/2021-10-26_pre-qc_annotation/out
+#$ -e results/2021-10-26_pre-qc_annotation/err
 
 # qsub -t 1-77 bin/pre-qc_annotate.qsub.sh
 
