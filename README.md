@@ -30,4 +30,12 @@ This version creates a Seurat object for each pool and calculates the percentage
 - output: results/2021-10-28_qc_filter_barcodes
 - script: [QC.R](https://github.com/powellgenomicslab/onek1k_scd/blob/c1987d5baf8ad3db6d0e28ab60d6e54edebcd496/bin/QC.R "c1987d5")
 
+## Filter barcodes
+
+- input: 
+  + results/2021-10-28_qc_filter_barcodes
+  + results/2021-10-26_pre-qc_annotation
+- output: results/2021-10-28_cleaned_barcodes
+- script: [clean_barcodes.R](https://github.com/powellgenomicslab/onek1k_scd/blob/4c1661834289aaa0f92205a86b6cb54e67905805/bin/clean_barcodes.R "4c16618")
+
 
