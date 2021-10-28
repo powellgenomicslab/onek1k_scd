@@ -6,7 +6,7 @@ Phase 2 analysis for OneK1K data in hg38 and new cell type annotation
 
 -   input: /directflow/SCCGGroupShare/projects/data/experimental_data/CLEAN/OneK1K_scRNA/OneK1K_scRNA_V3
 -   output: results/2021-10-26_raw_seurat_objects
--   script: [raw_seurat_object](https://github.com/powellgenomicslab/onek1k_scd/blob/45e72279d3032c9ea2251e3ff9005c69de3a4527/bin/raw_seurat_object.R "45e7227")
+-   script: [raw_seurat_object.R](https://github.com/powellgenomicslab/onek1k_scd/blob/45e72279d3032c9ea2251e3ff9005c69de3a4527/bin/raw_seurat_object.R "45e7227")
 
 This version creates a Seurat object for each pool and calculates the percentage of mitochondrial expression. Results are saved in separate `.RDS` objects. Pool number is appended to each barcode to avoid duplicates when pools are combined.
 
@@ -22,7 +22,7 @@ This version creates a Seurat object for each pool and calculates the percentage
 
 - input: results/2021-10-26_pre-qc_annotation
 - output: results/2021-10-26_pre-qc_metadata_aggregation
-- script: [pre-qc_metadata_aggregation](https://github.com/powellgenomicslab/onek1k_scd/blob/32a8b61939231b51a10231c7e9ac199ff2906d08/bin/pre-qc_metadata_aggregation.R "32a8b61")
+- script: [pre-qc_metadata_aggregation.R](https://github.com/powellgenomicslab/onek1k_scd/blob/32a8b61939231b51a10231c7e9ac199ff2906d08/bin/pre-qc_metadata_aggregation.R "32a8b61")
 
 ## Perform QC
 
@@ -39,3 +39,8 @@ This version creates a Seurat object for each pool and calculates the percentage
 - script: [clean_barcodes.R](https://github.com/powellgenomicslab/onek1k_scd/blob/4c1661834289aaa0f92205a86b6cb54e67905805/bin/clean_barcodes.R "4c16618")
 
 
+## Cell type classification
+
+- input: results/2021-10-28_cleaned_barcodes
+- output: results/2021-10-28_cell_type_annotation
+- script: [cell_type_annotation.sh](https://github.com/powellgenomicslab/onek1k_scd/blob/b1fd2b2b4f4fd55b75de5faa3eb6d622fef4f39f/bin/cell_type_annotation.sh "b1fd2b2")
