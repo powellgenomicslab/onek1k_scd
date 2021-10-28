@@ -41,6 +41,8 @@ pools <- lapply(pool_dirs, function(x){
   readRDS(here(path, x, "query.RDS"))
 })
 
+names(pools) <- str_remove(pool_dirs, "_out$")
+
 #   ____________________________________________________________________________
 #   Subset barcodes                                                         ####
 
@@ -81,16 +83,18 @@ filter_pool <- function(x){
 filtered_pools <- lapply(pools, filter_pool)
 # Pool pool_40 skipped
 # Pool pool_66 skipped
+
+# Remove pool 40 and 66
+i <- sapply(filtered_pools, inherits, "Seurat")
+filtered_pools <- filtered_pools[i]
  
 #   ____________________________________________________________________________
 #   Export data                                                             ####
 
-
 void <- mapply(function(obj, pool){
   message("Saving object ", pool)
   saveRDS(obj, file = here(output, pool %p% ".RDS"))
-}, filtered_pools, str_remove(pool_dirs, "_out$"))
-
+}, filtered_pools, names(filtered_pools))
 
 #   ____________________________________________________________________________
 #   Session info                                                            ####
