@@ -36,7 +36,7 @@ This version creates a Seurat object for each pool and calculates the percentage
   + results/2021-10-28_qc_filter_barcodes
   + results/2021-10-26_pre-qc_annotation
 - output: results/2021-10-28_cleaned_barcodes
-- script: [clean_barcodes.R](https://github.com/powellgenomicslab/onek1k_scd/blob/4c1661834289aaa0f92205a86b6cb54e67905805/bin/clean_barcodes.R "4c16618")
+- script: [clean_barcodes.R](https://github.com/powellgenomicslab/onek1k_scd/blob/8abca650c71fe75898f5c43371a8741475ef9dcb/bin/clean_barcodes.R "8abca65")
 
 
 ## Cell type classification
@@ -44,3 +44,5 @@ This version creates a Seurat object for each pool and calculates the percentage
 - input: results/2021-10-28_cleaned_barcodes
 - output: results/2021-10-28_cell_type_annotation
 - script: [cell_type_annotation.sh](https://github.com/powellgenomicslab/onek1k_scd/blob/b1fd2b2b4f4fd55b75de5faa3eb6d622fef4f39f/bin/cell_type_annotation.sh "b1fd2b2")
+
+---
