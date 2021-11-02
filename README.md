@@ -45,10 +45,17 @@ This version creates a Seurat object for each pool and calculates the percentage
 - output: results/2021-10-28_cell_type_annotation
 - script: [cell_type_annotation.sh](https://github.com/powellgenomicslab/onek1k_scd/blob/b1fd2b2b4f4fd55b75de5faa3eb6d622fef4f39f/bin/cell_type_annotation.sh "b1fd2b2")
 
----
 
 ## Combine pools
 
 - input: results/2021-10-28_cell_type_annotation
 - output: results/2021-10-30_combine_pools
 - script: [combine_pools.sh](https://github.com/powellgenomicslab/onek1k_scd/blob/3ff7b63a85936ef1d29d164ec18f2f5d9e38ffa0/bin/combine_pools.R "3ff7b63")
+
+
+## Align pools
+
+- input: results/2021-10-30_combine_pools
+- output: results/2021-10-30_aligned_data
+- script: [align_embeddings.R](https://github.com/powellgenomicslab/onek1k_scd/blob/b398b25b0b6fd27468b7e5310377758c47cc0f57/bin/align_embeddings.R "b398b25")
+
