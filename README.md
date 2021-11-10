@@ -59,3 +59,18 @@ This version creates a Seurat object for each pool and calculates the percentage
 - output: results/2021-10-30_aligned_data
 - script: [align_embeddings.R](https://github.com/powellgenomicslab/onek1k_scd/blob/b398b25b0b6fd27468b7e5310377758c47cc0f57/bin/align_embeddings.R "b398b25")
 
+## Add metadata
+
+- input: results/2021-10-30_aligned_data
+- output: results/2021-11-10_add_metadata
+- script: [add_sex_age.R](https://github.com/powellgenomicslab/onek1k_scd/blob/c8101b98ad691291cd2ecd9ff864ab73028bf61a/bin/add_sex_age.R "c8101b9")
+
+This step also adds ancestry information
+
+## Convert Seurat to Scanpy
+
+- input: results/2021-11-10_add_metadata
+- output: results/2021-11-10_h5ad
+- script: [convert_seurat2scanpy.R](https://github.com/powellgenomicslab/onek1k_scd/blob/ef3e6cc3dfc53896cd38c991a9affd52831737f2/bin/convert_seurat2scanpy.R "ef3e6cc")
+
+Stores raw counts, azimuth reductions, and harmony embeddings
