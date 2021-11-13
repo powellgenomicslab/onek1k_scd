@@ -49,7 +49,7 @@ data <- merge(pools[[1]], pools[-1], merge.dr = c("azimuth_spca", "azimuth_umap"
 fin()
 
 # Relabel individual
-data$individual[which(data$individual == "870_871")] <- "966_967"
+data$individual[which(data$individual=="870_871" & data$pool=="pool_19")] <- "966_967"
 
 #   ____________________________________________________________________________
 #   Export data                                                             ####

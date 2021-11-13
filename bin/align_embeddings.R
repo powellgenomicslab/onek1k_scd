@@ -11,7 +11,7 @@
 #   HPC details                                                             ####
 
 # screen -S align
-# qrsh -N align -l mem_requested=200G -pe smp 1 -q short.q
+# qsub -N align -l mem_requested=300G -q long.q Rscript bin/align_embeddings.R
 # conda activate r-4.1.1
 
 #   ____________________________________________________________________________
@@ -54,8 +54,7 @@ data <- RunPCA(data)
 inicio("Align embeddings")
 alignment <- HarmonyMatrix(Embeddings(data, reduction = "pca"), meta_data = data[[]], 
                            vars_use = "pool", do_pca = FALSE,  
-                           max.iter.harmony = 50,
-                           max.iter.cluster = Inf, 
+                           max.iter.harmony = 30,
                            epsilon.cluster = -Inf,
                            epsilon.harmony = -Inf)
 fin()
