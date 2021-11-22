@@ -10,7 +10,7 @@
 #   HPC details                                                             ####
 
 # screen -S add_meta
-# qrsh -N add_meta -l mem_requested=200G -pe smp 1 -q short.q
+# qrsh -N add_meta -l mem_requested=250G -pe smp 1 -q short.q
 # conda activate r-4.1.1
 
 #   ____________________________________________________________________________
@@ -52,11 +52,14 @@ data <- AddMetaData(data, md)
 i <- fifelse(data$individual %chin% fam$individual, FALSE, TRUE)
 data$ethnic_outlier <- i
 
+# Removing this individual because of low number of cells (57)
+data <- data[, data$individual != "966_967"]
+
 #   ____________________________________________________________________________
 #   Export data                                                             ####
 
-SaveH5Seurat(data, filename = here(output, "onek1k.h5seurat"), overwrite = TRUE)
-saveRDS(data, file = here(output, "onek1k.integrated.RDS"))
+# SaveH5Seurat(data, filename = here(output, "onek1k.h5seurat"), overwrite = TRUE)
+saveRDS(data, file = here(output, "onek1k_integrated.RDS"))
 
 #   ____________________________________________________________________________
 #   Session info                                                            ####
