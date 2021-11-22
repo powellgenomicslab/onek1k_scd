@@ -11,7 +11,7 @@
 #   HPC details                                                             ####
 
 # screen -S align
-# qsub -N align -l mem_requested=300G -q long.q Rscript bin/align_embeddings.R
+# qrsh -N align -l mem_requested=300G -q long.q 
 # conda activate r-4.1.1
 
 #   ____________________________________________________________________________
