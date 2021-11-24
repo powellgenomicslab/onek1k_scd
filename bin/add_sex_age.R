@@ -58,8 +58,8 @@ data <- data[, data$individual != "966_967"]
 #   ____________________________________________________________________________
 #   Export data                                                             ####
 
-# SaveH5Seurat(data, filename = here(output, "onek1k.h5seurat"), overwrite = TRUE)
-saveRDS(data, file = here(output, "onek1k_integrated.RDS"))
+SaveH5Seurat(data, filename = here(output, "onek1k.h5seurat"), overwrite = TRUE)
+saveRDS(data, file = here(output, "onek1k.RDS"))
 
 #   ____________________________________________________________________________
 #   Session info                                                            ####
