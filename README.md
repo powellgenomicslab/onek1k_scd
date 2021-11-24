@@ -50,20 +50,20 @@ This version creates a Seurat object for each pool and calculates the percentage
 
 - input: results/2021-10-28_cell_type_annotation
 - output: results/2021-10-30_combine_pools
-- script: [combine_pools.sh](https://github.com/powellgenomicslab/onek1k_scd/blob/3ff7b63a85936ef1d29d164ec18f2f5d9e38ffa0/bin/combine_pools.R "3ff7b63")
+- script: [combine_pools.sh](https://github.com/powellgenomicslab/onek1k_scd/blob/9ee53f3d8ec7b48a029237233fef4ccb4bfaba04/bin/combine_pools.R "9ee53f3")
 
 
 ## Align pools
 
 - input: results/2021-10-30_combine_pools
 - output: results/2021-10-30_aligned_data
-- script: [align_embeddings.R](https://github.com/powellgenomicslab/onek1k_scd/blob/b398b25b0b6fd27468b7e5310377758c47cc0f57/bin/align_embeddings.R "b398b25")
+- script: [align_embeddings.R](https://github.com/powellgenomicslab/onek1k_scd/blob/73389dce67c99dc27d59efd186d01a9113d911a6/bin/align_embeddings.R "73389dc")
 
 ## Add metadata
 
 - input: results/2021-10-30_aligned_data
 - output: results/2021-11-10_add_metadata
-- script: [add_sex_age.R](https://github.com/powellgenomicslab/onek1k_scd/blob/c8101b98ad691291cd2ecd9ff864ab73028bf61a/bin/add_sex_age.R "c8101b9")
+- script: [add_sex_age.R](https://github.com/powellgenomicslab/onek1k_scd/blob/9d8a8863c9c5973c001bef31f5dd77c5c0c78ce4/bin/add_sex_age.R "9d8a886")
 
 This step also adds ancestry information
 
