@@ -74,3 +74,17 @@ This step also adds ancestry information
 - script: [convert_seurat2scanpy.R](https://github.com/powellgenomicslab/onek1k_scd/blob/ef3e6cc3dfc53896cd38c991a9affd52831737f2/bin/convert_seurat2scanpy.R "ef3e6cc")
 
 Stores raw counts, azimuth reductions, and harmony embeddings
+
+
+## Apply SCTransform v1
+
+- input: results/2021-11-10_add_metadata
+- output: results/2021-11-30_SCT_v1
+- script: [sct_v1.R](https://github.com/powellgenomicslab/onek1k_scd/blob/b5dad00c45c94a7871b4e1bd3bb2e03aed63183e/bin/sct_v1.R "b5dad00")
+
+
+## Apply scale factor normalization
+
+- input: results/2021-11-10_add_metadata
+- output: results/2021-12-02_norm
+- script: [norm.R](https://github.com/powellgenomicslab/onek1k_scd/blob/e3464910137c596632271e4eb957bb0039c05320/bin/norm.R "e346491")
