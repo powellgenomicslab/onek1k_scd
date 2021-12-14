@@ -82,6 +82,12 @@ Stores raw counts, azimuth reductions, and harmony embeddings
 - output: results/2021-11-30_SCT_v1
 - script: [sct_v1.R](https://github.com/powellgenomicslab/onek1k_scd/blob/b5dad00c45c94a7871b4e1bd3bb2e03aed63183e/bin/sct_v1.R "b5dad00")
 
+## Apply SCTransform v2
+
+- input: results/2021-11-10_add_metadata
+- output: results/2021-11-30_SCT_v2
+- script: [sct_v1.R](https://github.com/powellgenomicslab/onek1k_scd/blob/04cc3b1db9893148471433c7f534c1918c81623c/bin/sct_v2.R "04cc3b1")
+
 
 ## Apply scale factor normalization
 
