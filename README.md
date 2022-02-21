@@ -94,3 +94,10 @@ Stores raw counts, azimuth reductions, and harmony embeddings
 - input: results/2021-11-10_add_metadata
 - output: results/2021-12-02_norm
 - script: [norm.R](https://github.com/powellgenomicslab/onek1k_scd/blob/e3464910137c596632271e4eb957bb0039c05320/bin/norm.R "e346491")
+
+
+## Extract metadata
+
+- input: results/2021-11-10_add_metadata
+- output: results/2022-02-22_final_metadata
+- script: [extract_metadata.R](https://github.com/powellgenomicslab/onek1k_scd/blob/c60c9e8e67e6e416255e8bc9443f3216f853a7f9/bin/extract_metadata.R "c60c9e8")
